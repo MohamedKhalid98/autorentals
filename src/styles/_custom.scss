@@ -1,0 +1,131 @@
+input,
+select {
+    &.form-control,
+    & {
+        border-color: 1px solid var(--theme);
+        &:focus {
+            background-color: var(--theme);
+            box-shadow: none;
+            border-color: #243b55;
+        }
+    }
+}
+
+.text-theme {
+    color: var(--theme);
+}
+.border-theme {
+    border: var(--theme);
+}
+.btn-theme {
+    background-color: var(--theme);
+    color: var(--text-theme);
+    &:hover {
+        color: var(--text-theme);
+    }
+}
+.bg-theme {
+    background-color: var(--theme);
+    color: var(--text-theme);
+}
+.bg-img-theme {
+    background-image: var(--theme-bg-img);
+    color: var(--text-theme);
+}
+
+.custom-range::-webkit-slider-thumb {
+    background: var(--theme-bg-img);
+}
+
+.custom-range::-moz-range-thumb {
+    background: var(--theme-bg-img);
+}
+
+.custom-range::-ms-thumb {
+    background: var(--theme-bg-img);
+}
+
+.bg-theme {
+    background-image: var(--theme-bg-img);
+}
+
+.shadow {
+    box-shadow: 0 3px 5px 2px #243b555e;
+}
+input,
+select {
+    border-color: #243b55;
+}
+
+.custom-checkbox {
+    height: 30px;
+    .custom-control-label {
+        line-height: 30px;
+        padding-left: 10px;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+        &::before,
+        &::after {
+            width: 25px;
+            height: 25px;
+            box-shadow: none;
+            border-radius: 50%;
+            border-color: #243b55;
+        }
+    }
+}
+
+.custom-control-input:checked ~ .custom-control-label {
+    &::before {
+        background-image: var(--theme-bg-img);
+        border-color: #111;
+    }
+    &::first-letter {
+        font-weight: bold;
+        color: #243b55;
+    }
+}
+
+.page-item {
+    .page-link {
+        border-color: #111;
+        color: #111;
+        &:hover {
+            background-image: var(--theme-bg-img);
+            color: white;
+            transform: scale(1.2);
+            border-color: #111;
+        }
+    }
+    &.active {
+        .page-link {
+            background-image: var(--theme-bg-img);
+            border-color: #111;
+            transform: scale(1.2);
+            border-radius: 4px;
+            .page-link:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+:root {
+    --theme-bg-img: linear-gradient(45deg, #141e30 30%, #243b55 90%);
+    --text-theme: #fff;
+    --theme: #141e30;
+}
+
+.car-card {
+    background: #141e30;
+    background-image: url("https://png2.cleanpng.com/sh/8b6f58592302fb393400886ba501fd85/L0KzQYm3U8I0N5Rxj5H0aYP2gLBuTcIxOWgygtducD3qgrL1hL1kcJZ3h91uZT21QIK9TfpmbaEyfARqbnSwc7nskv9sbZYygtducD24cbO8UvZibGZrSaZqNj61Q4G4UMA4OWI6SqMDMkO5RoK6WMk2NqFzf3==/kisspng-2017-jeep-grand-cherokee-2016-jeep-grand-cherokee-jeep-5ab52fad5f14a6.2301007115218236613895.png");
+    background-size: 225px;
+    background-repeat: no-repeat;
+    background-position: 0px -5px;
+    .card-body {
+        clip-path: ellipse(85% 350px at 81% 161%);
+        background-color: white;
+        padding-left: 110px;
+    }
+}

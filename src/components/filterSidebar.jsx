@@ -116,7 +116,7 @@ class FilterSidebar extends Component {
             onChange={this.handleChangeFilter}
           />
         </div>
-        <ul>
+        <ul className="list-unstyled">
           <li className="card bg-white text-dark border-theme shadow mb-2">
             <label className="card-header bg-theme text-white">Car Type</label>
             <ul className="card-body">
@@ -136,7 +136,7 @@ class FilterSidebar extends Component {
             <label className="card-header bg-theme text-white">
               Seller Type
             </label>
-            <ul className="card-body">
+            <ul className="card-body list-unstyled">
               {sellerTypes.map(seller => (
                 <Checkbox
                   label={seller.name}
@@ -151,7 +151,7 @@ class FilterSidebar extends Component {
           </li>
           <li className="card bg-white text-dark border-theme shadow mb-2">
             <label className="card-header bg-theme text-white">Price</label>
-            <ul className="card-body">
+            <ul className="card-body list-unstyled">
               <li>
                 <Range
                   max="100000"
