@@ -1,4 +1,5 @@
 import React from "react";
+import "./Car.scss";
 const Car = ({ data }) => {
   return (
     <div className="card mb-3 border border-secondary text-dark bg-light shadow">

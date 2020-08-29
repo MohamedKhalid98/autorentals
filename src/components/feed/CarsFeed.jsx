@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Car from "./car";
+import Car from "./Car";
 import _ from "lodash";
 class FilterableCars extends Component {
   state = {};

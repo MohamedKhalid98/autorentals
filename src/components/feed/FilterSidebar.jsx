@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Checkbox from "../shared/checkbox";
-import Range from "../shared/range";
+import Checkbox from "../../shared/Checkbox";
+import Range from "../../shared/Range";
 import _ from "lodash";
-import Select from "../shared/select";
+import Select from "../../shared/Select";
 import axios from "axios";
-import config from "../config/default.json";
+import config from "../../config/default.json";
 
 const sellerTypes = [
   { name: "owner", type: "owner" },
