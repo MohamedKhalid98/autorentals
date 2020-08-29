@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import FilterSidebar from "./filterSidebar";
-import config from "../config/default.json";
+import FilterSidebar from "./FilterSidebar";
+import config from "../../config/default.json";
 import axios from "axios";
-import SortMenu from "./sortMenu";
-import FilteredCars from "./filterdCars";
+import SortMenu from "./SortMenu";
+import FilteredCars from "./CarsFeed";
 import { isEmpty } from "lodash";
 class FilterableCarRentals extends Component {
   state = {
@@ -43,7 +43,7 @@ class FilterableCarRentals extends Component {
       pages: data.pages,
       availableCars: data.availableCars,
     };
-    if (data.pages < currentPage) state.currentPage = data.pages;
+    if (data.pages < currentPage) state.currentPage = data.pages || 1;
     this.setState(state);
   };
 
@@ -68,7 +68,7 @@ class FilterableCarRentals extends Component {
     const { brands, models, carTypes, availableCars } = this.state;
 
     return (
-      <React.Fragment>
+      <div className="container">
         <div className="my-4 h1 text-dark">Available cars for rent</div>
         <div className="row"></div>
         <div className="row mt-3">
@@ -93,7 +93,7 @@ class FilterableCarRentals extends Component {
             />
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

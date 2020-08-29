@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import Layout from "./containers/layout";
+import Layout from "./containers/Layout";
 
 class App extends Component {
   state = {};
   render() {
-    return (
-      <Layout />
-    );
+    return <Layout />;
   }
 }
 

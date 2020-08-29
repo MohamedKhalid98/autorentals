@@ -4,7 +4,7 @@ select {
     & {
         border-color: 1px solid var(--theme);
         &:focus {
-            background-color: var(--theme);
+            // background-color: var(--theme);
             box-shadow: none;
             border-color: #243b55;
         }
@@ -26,6 +26,10 @@ select {
 }
 .bg-theme {
     background-color: var(--theme);
+    color: var(--text-theme);
+}
+.bg-theme-light {
+    background-color: var(--theme-light);
     color: var(--text-theme);
 }
 .bg-img-theme {
@@ -115,17 +119,5 @@ select {
     --theme-bg-img: linear-gradient(45deg, #141e30 30%, #243b55 90%);
     --text-theme: #fff;
     --theme: #141e30;
-}
-
-.car-card {
-    background: #141e30;
-    background-image: url("https://png2.cleanpng.com/sh/8b6f58592302fb393400886ba501fd85/L0KzQYm3U8I0N5Rxj5H0aYP2gLBuTcIxOWgygtducD3qgrL1hL1kcJZ3h91uZT21QIK9TfpmbaEyfARqbnSwc7nskv9sbZYygtducD24cbO8UvZibGZrSaZqNj61Q4G4UMA4OWI6SqMDMkO5RoK6WMk2NqFzf3==/kisspng-2017-jeep-grand-cherokee-2016-jeep-grand-cherokee-jeep-5ab52fad5f14a6.2301007115218236613895.png");
-    background-size: 225px;
-    background-repeat: no-repeat;
-    background-position: 0px -5px;
-    .card-body {
-        clip-path: ellipse(85% 350px at 81% 161%);
-        background-color: white;
-        padding-left: 110px;
-    }
+    --theme-light: #243b55;
 }
