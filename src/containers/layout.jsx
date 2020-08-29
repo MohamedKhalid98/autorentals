@@ -17,7 +17,7 @@ class Layout extends Component {
         <main className="">
           <Switch>
             <Route path="/" exact component={FilterableCarRentals} />
-            <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
       </React.Fragment>
