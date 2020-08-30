@@ -28,7 +28,7 @@ class Register extends Form {
   doSubmit = async () => {
     try {
       await usersService.register({ ...this.state.data });
-      window.location = "/";
+      this.props.history.push("/");
     } catch (error) {
       this.setState({ errors: { email: error.message } });
     }

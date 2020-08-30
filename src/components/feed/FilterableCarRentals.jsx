@@ -70,7 +70,7 @@ class FilterableCarRentals extends Component {
 
     return (
       <div className="container">
-        <div className="my-4 h1 text-dark">Available cars for rent</div>
+        <div className="my-4 h1 text-theme">Available cars for rent</div>
         <div className="row"></div>
         <div className="row mt-3">
           <div className="col-4">

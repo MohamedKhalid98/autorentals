@@ -6,7 +6,7 @@ select {
         &:focus {
             // background-color: var(--theme);
             box-shadow: none;
-            border-color: #2a5298;
+            border-color: var(--theme);
         }
     }
 }
@@ -77,7 +77,7 @@ select {
             height: 25px;
             box-shadow: none;
             border-radius: 50%;
-            border-color: #2a5298;
+            border-color: var(--theme);
         }
     }
 }

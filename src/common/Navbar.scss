@@ -1,7 +1,17 @@
 .navbar {
     .nav-item {
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        a.nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            &:hover,
+            &.active {
+                background: var(--theme);
+            }
+        }
     }
     .dropdown-menu {
         right: 0;

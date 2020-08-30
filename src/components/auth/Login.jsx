@@ -25,7 +25,7 @@ class Login extends Form {
   doSubmit = async () => {
     try {
       await authService.login(this.state.data.email, this.state.data.password);
-      window.location = "/";
+      this.props.history.push("/");
     } catch (error) {
       this.setState({ errors: { email: error.message } });
     }

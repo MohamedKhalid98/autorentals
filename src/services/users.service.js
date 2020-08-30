@@ -4,8 +4,8 @@ import authService from "./auth.service";
 export async function register(user) {
   try {
     console.log(user);
-    const { data: jwt } = await axios.post("/users", user);
-    authService.loginWithJwt(jwt);
+    const response = await axios.post("/users", user);
+    authService.loginWithJwt(response.headers["x-auth-token"]);
   } catch (error) {
     throw new Error(error.response.data);
   }
