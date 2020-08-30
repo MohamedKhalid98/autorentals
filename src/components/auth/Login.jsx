@@ -3,14 +3,12 @@ import Form from "../../shared/Form";
 import "./auth.scss";
 import Joi from "joi";
 import Input from "../../shared/Input";
-import usersService from "../../services/users.service";
-import { NavLink, Redirect } from "react-router-dom";
 import authService from "../../services/auth.service";
+import { NavLink, Redirect } from "react-router-dom";
 
-class Register extends Form {
+class Login extends Form {
   state = {
     data: {
-      name: "",
       email: "",
       password: "",
     },
@@ -18,16 +16,15 @@ class Register extends Form {
   };
 
   schema = Joi.object({
-    name: Joi.string().required().min(3),
     email: Joi.string()
       .required()
       .email({ tlds: { allow: false } }),
-    password: Joi.string().required().min(6),
+    password: Joi.string().required(),
   });
 
   doSubmit = async () => {
     try {
-      await usersService.register({ ...this.state.data });
+      await authService.login(this.state.data.email, this.state.data.password);
       window.location = "/";
     } catch (error) {
       this.setState({ errors: { email: error.message } });
@@ -45,12 +42,6 @@ class Register extends Form {
         </div>
         <form onSubmit={this.submitHandler}>
           <Input
-            name="name"
-            label="Name"
-            onChange={this.inputChangeHandler}
-            error={errors}
-          />
-          <Input
             name="email"
             type="email"
             label="Email"
@@ -67,15 +58,15 @@ class Register extends Form {
           <button
             type="submit"
             className="btn btn-block bg-theme-light btn-theme text-theme btn-md p-3 mt-3">
-            Register
+            Login
           </button>
         </form>
         <p className="small mb-0 mt-2">
-          Already have an account? <NavLink to="/login">Sign in</NavLink>
+          Don't have an account? <NavLink to="/register">Create now</NavLink>
         </p>
       </div>
     );
   }
 }
 
-export default Register;
+export default Login;

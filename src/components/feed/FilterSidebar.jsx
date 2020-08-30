@@ -40,12 +40,8 @@ class FilterSidebar extends Component {
 
   async componentDidMount() {
     console.log(process.env);
-    const { data: carTypes } = await axios.get(
-      `${process.env.REACT_APP_API_URL}/car-types`
-    );
-    const { data: brands } = await axios.get(
-      `${process.env.REACT_APP_API_URL}/brands`
-    );
+    const { data: carTypes } = await axios.get("/car-types");
+    const { data: brands } = await axios.get("/brands");
     this.setState({ carTypes, brands });
   }
   componentDidUpdate(prevProps, prevState) {
@@ -88,9 +84,7 @@ class FilterSidebar extends Component {
   };
   getModels = async brandId => {
     const modelsId = this.state.brands.find(b => b._id === brandId).modelsId;
-    const { data: models } = await axios.get(
-      `${process.env.REACT_APP_API_URL}/models/${modelsId}`
-    );
+    const { data: models } = await axios.get(`/models/${modelsId}`);
     return models;
   };
   handlePriceRange = ({ name, range }) => {

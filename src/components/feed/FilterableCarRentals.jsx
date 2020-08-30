@@ -35,7 +35,7 @@ class FilterableCarRentals extends Component {
     };
     if (!isEmpty(queryParams)) Object.assign(params, queryParams);
     console.log("before push", params);
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/cars`, {
+    const { data } = await axios.get("/cars", {
       params,
     });
 
