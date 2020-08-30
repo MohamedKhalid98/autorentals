@@ -4,7 +4,6 @@ import Range from "../../shared/Range";
 import _ from "lodash";
 import Select from "../../shared/Select";
 import axios from "axios";
-import config from "../../config/default.json";
 
 const sellerTypes = [
   { name: "owner", type: "owner" },
@@ -40,8 +39,13 @@ class FilterSidebar extends Component {
   };
 
   async componentDidMount() {
-    const { data: carTypes } = await axios.get(`${config.API_URL}/car-types`);
-    const { data: brands } = await axios.get(`${config.API_URL}/brands`);
+    console.log(process.env);
+    const { data: carTypes } = await axios.get(
+      `${process.env.REACT_APP_API_URL}/car-types`
+    );
+    const { data: brands } = await axios.get(
+      `${process.env.REACT_APP_API_URL}/brands`
+    );
     this.setState({ carTypes, brands });
   }
   componentDidUpdate(prevProps, prevState) {
@@ -85,7 +89,7 @@ class FilterSidebar extends Component {
   getModels = async brandId => {
     const modelsId = this.state.brands.find(b => b._id === brandId).modelsId;
     const { data: models } = await axios.get(
-      `${config.API_URL}/models/${modelsId}`
+      `${process.env.REACT_APP_API_URL}/models/${modelsId}`
     );
     return models;
   };

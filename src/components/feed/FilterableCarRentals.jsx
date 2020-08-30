@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import FilterSidebar from "./FilterSidebar";
-import config from "../../config/default.json";
 import axios from "axios";
 import SortMenu from "./SortMenu";
 import FilteredCars from "./CarsFeed";
@@ -36,7 +35,9 @@ class FilterableCarRentals extends Component {
     };
     if (!isEmpty(queryParams)) Object.assign(params, queryParams);
     console.log("before push", params);
-    const { data } = await axios.get(`${config.API_URL}/cars`, { params });
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/cars`, {
+      params,
+    });
 
     let state = {
       rentalCars: data.cars,

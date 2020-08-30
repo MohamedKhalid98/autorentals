@@ -33,7 +33,7 @@ const Navbar = ({ onSearchChange }) => {
           />
         </form> */}
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink className="nav-link" to="/rentals">
               Rentals
             </NavLink>
@@ -41,6 +41,16 @@ const Navbar = ({ onSearchChange }) => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/dashboard">
               Dashboard
+            </NavLink>
+          </li> */}
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/signin">
+              Login
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/register">
+              Sign up
             </NavLink>
           </li>
         </ul>
