@@ -19,7 +19,7 @@ class Dashboard extends Component {
               render={() => (
                 <div className="h1 p-5 bg-theme rounded mx-auto mt-5 h-50 d-flex align-items-center justify-content-center">
                   Welcome to Dashboard
-                  <i class="fas fa-cog fa-lg animate ml-3"></i>
+                  <i className="fas fa-cog fa-lg animate ml-3"></i>
                 </div>
               )}
             />
