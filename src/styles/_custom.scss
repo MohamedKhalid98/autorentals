@@ -6,7 +6,7 @@ select {
         &:focus {
             // background-color: var(--theme);
             box-shadow: none;
-            border-color: #243b55;
+            border-color: #2a5298;
         }
     }
 }
@@ -20,8 +20,10 @@ select {
 .btn-theme {
     background-color: var(--theme);
     color: var(--text-theme);
+    transition: all 0.3s ease;
     &:hover {
         color: var(--text-theme);
+        background-color: var(--theme-light);
     }
 }
 .bg-theme {
@@ -75,7 +77,7 @@ select {
             height: 25px;
             box-shadow: none;
             border-radius: 50%;
-            border-color: #243b55;
+            border-color: #2a5298;
         }
     }
 }
@@ -121,3 +123,5 @@ select {
     --theme: #141e30;
     --theme-light: #243b55;
 }
+// linear-gradient(45deg, #141e30 30%, #243b55 90%)
+// linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)

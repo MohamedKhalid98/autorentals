@@ -73,7 +73,7 @@ class FilterableCarRentals extends Component {
         <div className="my-4 h1 text-dark">Available cars for rent</div>
         <div className="row"></div>
         <div className="row mt-3">
-          <div className="col-3">
+          <div className="col-4">
             <FilterSidebar
               carTypes={carTypes}
               brands={brands}
@@ -81,7 +81,7 @@ class FilterableCarRentals extends Component {
               onChangeFilter={e => this.handleFilter(e)}
             />
           </div>
-          <div className="col-9">
+          <div className="col-8">
             <SortMenu
               onSortChange={this.handleSort}
               availableCars={availableCars}
