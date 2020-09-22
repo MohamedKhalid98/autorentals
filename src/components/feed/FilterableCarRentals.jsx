@@ -4,6 +4,12 @@ import axios from "axios";
 import SortMenu from "./SortMenu";
 import FilteredCars from "./CarsFeed";
 import { isEmpty } from "lodash";
+import Modal from "../../common/Modal";
+import Backdrop from "../../common/Backdrop";
+import PostCar from "./postCarForm";
+
+import auth from '../../services/auth.service'
+import { Redirect } from "react-router";
 class FilterableCarRentals extends Component {
   state = {
     rentalCars: [],
@@ -12,6 +18,7 @@ class FilterableCarRentals extends Component {
     pageSize: 5,
     pages: 0,
     availableCars: 0,
+    toggleModal: false
   };
   async componentDidMount() {
     await this.getRentalCars();
@@ -34,7 +41,6 @@ class FilterableCarRentals extends Component {
       },
     };
     if (!isEmpty(queryParams)) Object.assign(params, queryParams);
-    console.log("before push", params);
     const { data } = await axios.get("/cars", {
       params,
     });
@@ -70,7 +76,25 @@ class FilterableCarRentals extends Component {
 
     return (
       <div className="container">
-        <div className="my-4 h1 text-theme">Available cars for rent</div>
+        <div className="my-4 h1 text-theme d-flex justify-content-between">
+          Available cars for rent
+          <button
+            className="btn btn-sm btn-theme px-5 py-4"
+            onClick={() => {
+              this.props.history.location.state = { name: 'ss' }
+              if (!auth.getCurrentUser()) return this.props.history.push('/login')
+              this.setState({ toggleModal: true })
+            }}>
+            RENT YOUR CAR
+          </button>
+          <Modal
+            header="POST YOUR CAR FOR RENT"
+            show={this.state.toggleModal}
+            closeModal={() => this.setState({ toggleModal: false })} >
+            <PostCar brands={brands} />
+          </Modal>
+          <Backdrop show={this.state.toggleModal} clicked={() => this.setState({ toggleModal: false })} />
+        </div>
         <div className="row"></div>
         <div className="row mt-3">
           <div className="col-4">

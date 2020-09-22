@@ -1,8 +1,10 @@
 import jwtDecode from "jwt-decode";
 import axios from "axios";
-
+import { setJwt } from "./httpService.service";
 const apiEndPoint = "/auth";
 const tokenKey = "currentUser";
+
+setJwt(getJwt());
 
 export async function login(email, password) {
   try {

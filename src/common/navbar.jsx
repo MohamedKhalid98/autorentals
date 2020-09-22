@@ -41,12 +41,15 @@ const Navbar = ({ onSearchChange }) => {
             <NavLink className="nav-link" to="/rentals">
               Rentals
             </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/dashboard">
-              Dashboard
-            </NavLink>
           </li> */}
+          {currentUser &&
+            currentUser.isAdmin &&
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/dashboard">
+                Dashboard
+              </NavLink>
+            </li>}
+
           {!currentUser ? (
             <React.Fragment>
               <li className="nav-item">
@@ -61,29 +64,29 @@ const Navbar = ({ onSearchChange }) => {
               </li>
             </React.Fragment>
           ) : (
-            <li className="nav-item">
-              <div className="dropdown h-100">
-                <button
-                  className="btn btn-theme dropdown-toggle d-block h-100"
-                  type="button"
-                  id="profileDropdown"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false">
-                  {currentUser.name}
-                </button>
-                <div
-                  className="dropdown-menu border-0 bg-theme text-theme"
-                  aria-labelledby="profileDropdown">
+              <li className="nav-item">
+                <div className="dropdown h-100">
                   <button
-                    className="dropdown-item"
-                    onClick={authService.logout}>
-                    Logout <i className="fas fa-arrow-right"></i>
+                    className="btn btn-theme dropdown-toggle d-block h-100"
+                    type="button"
+                    id="profileDropdown"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    {currentUser.name}
                   </button>
+                  <div
+                    className="dropdown-menu border-0 bg-theme text-theme"
+                    aria-labelledby="profileDropdown">
+                    <button
+                      className="dropdown-item"
+                      onClick={authService.logout}>
+                      Logout <i className="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </li>
-          )}
+              </li>
+            )}
         </ul>
       </div>
     </nav>

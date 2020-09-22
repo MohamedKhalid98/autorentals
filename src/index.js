@@ -10,9 +10,7 @@ import "./styles/_custom.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
-import axios from "axios";
-
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+import "./services/httpService.service";
 
 ReactDOM.render(
   <React.StrictMode>

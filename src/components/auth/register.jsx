@@ -30,7 +30,8 @@ class Register extends Form {
       await usersService.register({ ...this.state.data });
       this.props.history.push("/");
     } catch (error) {
-      this.setState({ errors: { email: error.message } });
+      if (error.response.status === "400")
+        this.setState({ errors: { email: error.message } });
     }
   };
   render() {
